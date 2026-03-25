@@ -1,0 +1,232 @@
+/* --- Middle Section: Process Management --- */
+.processSection {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.processHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.processTitleArea {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.processIconWrapper {
+  background-color: #0f4c3a;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+}
+
+.processTitle {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.processSubtitle {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.processSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.selectorLabel {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.selectBox {
+  padding: 8px 32px 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-family: inherit;
+  font-weight: 500;
+  outline: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.stepperContainer {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 48px;
+  padding: 0 24px;
+}
+
+.stepLine {
+  position: absolute;
+  top: 15px;
+  left: 24px;
+  right: 24px;
+  height: 2px;
+  background-color: #e2e8f0;
+  z-index: 1;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+  gap: 12px;
+}
+
+.stepCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 2px solid #e2e8f0;
+  color: #94a3b8;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.stepLabel {
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.step.completed .stepCircle {
+  background-color: #0f4c3a;
+  border-color: #0f4c3a;
+  color: white;
+}
+
+.step.completed .stepLabel {
+  color: #0f4c3a;
+  font-weight: 600;
+}
+
+.step.active .stepCircle {
+  border-color: #0f4c3a;
+  color: #0f4c3a;
+}
+
+.step.active .stepLabel {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.processDetails {
+  display: flex;
+  gap: 40px;
+}
+
+.taskList, .docList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.listTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #475569;
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.taskItem, .docItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  background-color: #f8fafc;
+  border: 1px solid #f1f5f9;
+}
+
+.taskCompleted {
+  color: #1e293b;
+}
+
+.taskPending {
+  color: #64748b;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.taskCheck {
+  color: #0f4c3a;
+  margin-right: -4px;
+  margin-left: 8px;
+}
+
+.taskUncheck {
+  color: #cbd5e1;
+  margin-right: -4px;
+  margin-left: 8px;
+}
+
+.docInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #1e293b;
+}
+
+.docUploaded {
+  background-color: #ecfdf5;
+  border-color: #a7f3d0;
+}
+
+.docCheck {
+  color: #10b981;
+}
+
+.docIcon {
+  color: #94a3b8;
+}
+
+.uploadedBadge {
+  background-color: #a7f3d0;
+  color: #065f46;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.uploadBtn {
+  background: transparent;
+  border: none;
+  color: #0f4c3a;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.uploadBtn:hover {
+  text-decoration: underline;
+}

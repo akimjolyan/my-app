@@ -1,0 +1,98 @@
+/* overide.css */
+
+.css-tzjoyo-MuiStack-root {
+    margin: 1em !important;
+}
+
+/* 0. Remove MUI Paper and Stack defaults that interfere */
+.MuiPaper-root {
+    padding: 0 !important;
+}
+
+/* 1. Global FullCalendar variables and reset */
+.fc {
+    --fc-border-color: #f0f0f0;
+    /* Lighter borders */
+    font-family: inherit;
+    direction: rtl;
+}
+
+.css-1sh91j5-MuiButton-startIcon {
+    margin: 0 !important;
+}
+
+/* 3. Header cells (Top row: ראשון, שני...) */
+.fc-col-header-cell {
+    padding: 15px 0 !important;
+    background-color: #fbfbfb !important;
+    border: none !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+}
+
+.fc-col-header-cell-cushion {
+    font-size: 0.9rem !important;
+    text-decoration: none !important;
+    color: #999;
+    font-weight: 500;
+}
+
+/* 4. Table cells (Date boxes) */
+.fc-theme-standard td {
+    border: 1px solid #f0f0f0 !important;
+}
+
+/* 5. Day Numbers Positioning (Top Right) */
+.fc-daygrid-day-top {
+    display: flex;
+    flex-direction: row-reverse !important;
+    justify-content: flex-start !important;
+}
+
+/* Make each date box a consistent large equal size */
+.fc-daygrid-day-frame {
+    min-height: 160px !important;
+}
+
+.fc-daygrid-day-number {
+    position: absolute !important;
+    right: 12px !important;
+    left: auto !important;
+    top: 10px !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    color: #333;
+    padding: 0 !important;
+    z-index: 10;
+}
+
+/* Ensure events start below the top-positioned number */
+.fc-daygrid-day-events {
+    margin-top: 40px !important;
+}
+
+/* 6. Event "Pill" Styling */
+.fc-event {
+    background: transparent !important;
+    border: none !important;
+    margin: 2px 8px !important;
+
+}
+
+.fc-event-title-container {
+    padding: 0 !important;
+}
+
+/* Grey out non-current month dates */
+.fc-day-other .fc-daygrid-day-number {
+    color: #ccc !important;
+}
+
+/* Today highlight */
+.fc-day-today {
+    background-color: #fcfcfc !important;
+}
+
+/* Remove bottom padding/borders that cause scrollbars */
+.fc-scroller {
+    overflow: hidden !important;
+}

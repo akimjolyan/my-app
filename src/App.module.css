@@ -1,0 +1,24 @@
+/* ── App Shell ── */
+.appShell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #f5f7f6;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+/* ── Main Layout ── */
+.mainLayoutContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  flex: 1;
+  overflow: hidden;
+}
+
+.contentArea {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  background-color: #f5f7f6;
+}
