@@ -1,6 +1,6 @@
-import ActiveAlertsCard from './ActiveAlertsCard/ActiveAlertsCard.tsx';
-import CurrentPresenceCard from './CurrentPresenceCard/CurrentPresenceCard.tsx';
-import TotalPersonnelCard from './TotalPersonnelCard/TotalPersonnelCard.tsx';
+import ActiveAlertsCard from './ActiveAlertsCard/index.tsx';
+import CurrentPresenceCard from './CurrentPresenceCard/index.tsx';
+import TotalPersonnelCard from './TotalPersonnelCard/index.tsx';
 import { Box } from '@mui/material';
 
 const MetricsRow = () => {

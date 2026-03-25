@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import ProcessManagement from './ProcessManagement/ProcessManagement.jsx';
-import HistoryTable from './HistoryTable/HistoryTable.tsx';
-import MetricsRow from './MetricsRow/MetricsRow.tsx';
+import ProcessManagement from './ProcessManagement/index.tsx';
+import HistoryTable from './HistoryTable/index.tsx';
+import MetricsRow from './MetricsRow/index.tsx';
 
 const ControlPannel: React.FC = () => {
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent, Typography, Box, Stack, Avatar } from '@mui/material';
 import SecurityUpdateWarningIcon from '@mui/icons-material/SecurityUpdateWarning';
 
-import Shift from './Shift/Shift.tsx';
+import Shift from './Shift/index.tsx';
 
 interface Alert {
   id: string;

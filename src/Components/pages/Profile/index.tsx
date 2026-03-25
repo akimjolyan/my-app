@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box, Grid } from '@mui/material';
-import HeroCard from './HeroCard/HeroCard.tsx';
+import HeroCard from './HeroCard/index.tsx';
 
 
-import LeftSection from './LeftSection/LeftSection.tsx';
-import UserDetails from './UserDetails/UserDetails.tsx';
+import LeftSection from './LeftSection/index.tsx';
+import UserDetails from './UserDetails/index.tsx';
 
 const Profile: React.FC = () => {
     return (

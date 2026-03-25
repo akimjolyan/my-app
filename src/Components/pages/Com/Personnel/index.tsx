@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import { PieChart } from '@mui/x-charts/PieChart';
 import React from 'react';
-import CalendarTS from '../Events/Calendar/Calendar.tsx';
+import CalendarTS from '../Events/Calendar/index.tsx';
 
 // --- Constants & Colors ---
 const COLORS = {
@@ -112,14 +112,19 @@ const PersonnelCard: React.FC<{ member: PersonnelMember }> = ({ member }) => (
 );
 
 const LegendItem: React.FC<{ color: string; label: string; value: number }> = ({ color, label, value }) => (
-    <Stack direction="row" alignItems="center" spacing={1.5} sx={{ minWidth: '100px' }}>
+    <Stack direction="row" alignItems="center" justifyContent={"flex-start"} spacing={1.5} sx={{ gap: 0.5 }}>
         <Box sx={{ width: 10, height: 10, borderRadius: '50%', bgcolor: color }} />
-        <Typography variant="caption" sx={{ color: COLORS.TEXT_SUB, fontWeight: '500' }}>
-            {label}
-        </Typography>
-        <Typography variant="caption" sx={{ fontWeight: 'bold', color: COLORS.TEXT_MAIN }}>
-            {value}
-        </Typography>
+
+        <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 1 }}>
+
+            <Typography variant="caption" sx={{ color: COLORS.TEXT_SUB, fontWeight: '500' }}>
+                {label}
+            </Typography>
+            <Typography variant="caption" sx={{ fontWeight: 'bold', color: COLORS.TEXT_MAIN }}>
+                {value}
+            </Typography>
+        </Box>
+
     </Stack>
 );
 
@@ -127,11 +132,12 @@ const Personnel: React.FC = () => {
     return (
         <Box sx={{ p: 4, bgcolor: COLORS.BG_PAGE, minHeight: '100vh', direction: 'rtl' }}>
             {/* Header Section */}
-            <Box sx={{ mb: 5, textAlign: 'right' }}>
-                <Typography variant="h4" sx={{ fontWeight: 'bold', color: COLORS.PRIMARY, mb: 1, fontSize: '1.8rem' }}>
+
+            <Box sx={{ mb: 4 }}>
+                <Typography variant="h4" fontWeight="bold" color="#004b49" gutterBottom>
                     ניהול נוכחות כוח אדם
                 </Typography>
-                <Typography variant="body2" sx={{ color: COLORS.TEXT_SUB }}>
+                <Typography variant="subtitle1" color="text.secondary">
                     סטטוס מוכנות וזמינות יחידתית בזמן אמת (13 חיילים סדיר/קבע)
                 </Typography>
             </Box>
@@ -155,8 +161,8 @@ const Personnel: React.FC = () => {
                             flexDirection: 'column',
                         }}
                     >
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
-                            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between', p: 2, alignItems: 'center', mb: 3 }}>
+                            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, }}>
                                 <Box sx={{ width: 4, bgcolor: COLORS.PRIMARY, borderRadius: 1 }} />
                                 <Typography variant="subtitle1" sx={{ fontWeight: 'bold', color: COLORS.TEXT_MAIN }}>
                                     דו"ח נוכחות יומי
@@ -192,8 +198,7 @@ const Personnel: React.FC = () => {
                                 ]}
                                 width={240}
                                 height={240}
-                                // @ts-ignore
-                                slotProps={{ legend: { hidden: true } }}
+                                hideLegend
                             />
                             <Box
                                 sx={{
@@ -215,7 +220,8 @@ const Personnel: React.FC = () => {
                         </Box>
 
                         <Box sx={{
-                            display: 'flex',
+                            display: 'grid',
+                            gridTemplateColumns: '1fr 1fr',
                             gap: 2,
                             mt: 'auto',
                             px: 2
@@ -227,16 +233,16 @@ const Personnel: React.FC = () => {
                     </Card>
                 </Box>
                 {/* Left Section: Personal Tracking (Flex: 1 to Grow) */}
-                <Box sx={{ height: '92%' }}>
+                <Box >
 
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', p: 2 }}>
                         <Stack direction="row" spacing={1} alignItems="center">
                             <ContactPageOutlinedIcon sx={{ color: COLORS.TEXT_SUB }} />
                             <Typography variant="subtitle1" sx={{ fontWeight: 'bold', color: COLORS.TEXT_MAIN }}>
                                 מעקב פרטני אחר חיילים
                             </Typography>
                         </Stack>
-                        <Link href="#" underline="hover" sx={{ color: COLORS.PRIMARY, fontSize: '0.8rem', fontWeight: 'bold' }}>
+                        <Link href="#" underline='none' sx={{ color: COLORS.PRIMARY, fontSize: '0.8rem', fontWeight: 'bold', py: 0.5, borderBottom: `1px solid ${COLORS.PRIMARY}` }}>
                             צפייה בכל הסד"כ
                         </Link>
                     </Box>
@@ -246,7 +252,7 @@ const Personnel: React.FC = () => {
                         display: 'flex',
                         flexWrap: 'wrap',
                         gap: 1,
-                        height: "100%"
+                        height: "86%"
                     }}>
                         {personnelData.map((member) => (
                             <PersonnelCard key={member.id} member={member} />

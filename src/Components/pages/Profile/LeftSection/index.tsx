@@ -1,9 +1,9 @@
 import { Grid, Stack } from '@mui/material';
 import React from 'react';
-import UnitHierarchyCard from './UnitHierarchyCard/UnitHierarchyCard.tsx';
+import UnitHierarchyCard from './UnitHierarchyCard/index.tsx';
 
-import CommandHierarchyCard from './CommandHierarchyCard/CommandHierarchyCard.tsx';
-import RecentActionsCard from './RecentActionsCard/RecentActionsCard.tsx';
+import CommandHierarchyCard from './CommandHierarchyCard/index.tsx';
+import RecentActionsCard from './RecentActionsCard/index.tsx';
 
 const LeftSection: React.FC = () => {
     return (

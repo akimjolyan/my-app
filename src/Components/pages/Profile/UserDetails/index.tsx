@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid, Stack } from '@mui/material';
-import BasicInfoCard from './BasicInfoCard/BasicInfoCard.tsx';
-import SecurityInfoCard from './SecurityInfoCard/SecurityInfoCard.tsx';
-import CommanderNotesCard from './CommanderNotesCard/CommanderNotesCard.tsx';
+import BasicInfoCard from './BasicInfoCard/index.tsx';
+import SecurityInfoCard from './SecurityInfoCard/index.tsx';
+import CommanderNotesCard from './CommanderNotesCard/index.tsx';
 
 const UserDetails: React.FC = () => {
     return (

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
-import UpcomingShiftsCard from './UpcomingShiftsCard/UpcomingShiftsCard.tsx';
-import ShiftsChartCard from './ShiftsChartCard/ShiftsChartCard.tsx';
+import UpcomingShiftsCard from './UpcomingShiftsCard/index.tsx';
+import ShiftsChartCard from './ShiftsChartCard/index.tsx';
 
-import CustomCalendar from './Calendar/Calendar.tsx';
+import CustomCalendar from './Calendar/index.tsx';
 
 export default function Events() {
   return (

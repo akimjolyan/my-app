@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
-import Sidebar from './Components/SideBar/SideBarr.tsx';
-import Home from './Components/pages/Home/Home.tsx';
+import Sidebar from './Components/SideBars/Sidebar.tsx';
+import Home from './Components/pages/Home/index.tsx';
 import styles from './App.module.css';
-import Search from './Components/pages/Search/Search.tsx';
-import Navbar from './Components/shared/Navbar/Navbar.tsx';
-import Profile from './Components/pages/Profile/Profile.tsx';
-import ComSidebar from './Components/SideBar/ComSidebar/ComSidebar.jsx';
-import ControlPannel from './Components/pages/Com/ControlPannel/ControlPannel.tsx';
-import Personnel from './Components/pages/Com/Personnel/Personnel.tsx';
-import Events from './Components/pages/Com/Events/Events.tsx';
+import Search from './Components/pages/Search/index.tsx';
+import Navbar from './Components/shared/Navbar/index.tsx';
+import Profile from './Components/pages/Profile/index.tsx';
+import CommanderSidebar from './Components/SideBars/CommanderSidebar.tsx';
+import ControlPannel from './Components/pages/Com/ControlPannel/index.tsx';
+import Personnel from './Components/pages/Com/Personnel/index.tsx';
+import Events from './Components/pages/Com/Events/index.tsx';
 import { ThemeProvider, CssBaseline, Box } from '@mui/material';
 import theme from './theme.ts';
 
@@ -54,7 +54,7 @@ const App = () => {
                 <main className={styles.contentArea}>
                   <Outlet />
                 </main>
-                <ComSidebar />
+                <CommanderSidebar />
               </Box>
             }>
               <Route path="/Dashboard" element={<ControlPannel />} />
