@@ -5,20 +5,24 @@ import SortIcon from '@mui/icons-material/Sort';
 import GridViewIcon from '@mui/icons-material/GridView';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { useSearchParams } from 'react-router-dom';
 
 const searchResults = [
-  { name: 'סרן נועם שרון', role: 'Backend ראש צוות', departmentPath: 'מדור פיתוח | ענף מערכות', avatarUrl: '/avatar1.png' },
-  { name: 'קא"ב דניאל כהן', role: 'מפתח Fullstack בכיר', departmentPath: 'מדור פיתוח | צוות UI', avatarUrl: '/avatar2.png' },
-  { name: 'רס"ן עידו ישראלי', role: 'רמ"ד פיתוח', departmentPath: 'ענף מערכות | ממר"ם', avatarUrl: '/avatar3.png' },
-  { name: 'רס"ל יניב גור', role: 'QA מפתח אוטומציה', departmentPath: 'מדור פיתוח | ענף מערכות', avatarUrl: '/avatar4.png' },
-  { name: 'סגן מאי ארד', role: 'מעצב מוצר (Product)', departmentPath: 'מדור פיתוח | צוות UI/UX', avatarUrl: '/avatar5.png' },
-  { name: 'סמ"ר רועי אזולאי', role: 'DevOps Engineer', departmentPath: 'מדור תשתיות | ענף מערכות', avatarUrl: '/avatar6.png', isOnline: false },
+  { id: '1', name: 'סרן נועם שרון', role: 'Backend ראש צוות', departmentPath: 'מדור פיתוח | ענף מערכות', avatarUrl: '/avatar1.png' },
+  { id: '2', name: 'קא"ב דניאל כהן', role: 'מפתח Fullstack בכיר', departmentPath: 'מדור פיתוח | צוות UI', avatarUrl: '/avatar2.png' },
+  { id: '3', name: 'רס"ן עידו ישראלי', role: 'רמ"ד פיתוח', departmentPath: 'ענף מערכות | ממר"ם', avatarUrl: '/avatar3.png' },
+  { id: '4', name: 'רס"ל יניב גור', role: 'QA מפתח אוטומציה', departmentPath: 'מדור פיתוח | ענף מערכות', avatarUrl: '/avatar4.png' },
+  { id: '5', name: 'סגן מאי ארד', role: 'מעצב מוצר (Product)', departmentPath: 'מדור פיתוח | צוות UI/UX', avatarUrl: '/avatar5.png' },
+  { id: '6', name: 'סמ"ר רועי אזולאי', role: 'DevOps Engineer', departmentPath: 'מדור תשתיות | ענף מערכות', avatarUrl: '/avatar6.png', isOnline: false },
 ];
 
 const Search: React.FC = () => {
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get('q') || '';
+
   return (
     <Box sx={{ px: 4, bgcolor: '#f8fafc' }} dir="rtl">
-      <Box sx={{ maxWidth: 1400, mx: 'auto' }}>
+      <Box sx={{ maxWidth: 1400, mx: 'auto', pt: 4 }}>
 
         {/* Breadcrumbs
         <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
@@ -37,10 +41,10 @@ const Search: React.FC = () => {
           {/* Title Area */}
           <Box sx={{ textAlign: 'right' }}>
             <Typography variant="h4" sx={{ fontWeight: 800, color: '#1e293b', mb: 1 }}>
-              תוצאות חיפוש עבור: "עידו ישראלי"
+              תוצאות חיפוש עבור: "{query}"
             </Typography>
             <Typography variant="subtitle1" sx={{ color: '#94a3b8', fontWeight: 500 }}>
-              נמצאו 6 תוצאות התואמות את החיפוש שלך
+              נמצאו {searchResults.length} תוצאות התואמות את החיפוש שלך
             </Typography>
           </Box>
           {/* Controls Bar */}
@@ -78,7 +82,7 @@ const Search: React.FC = () => {
 
         {/* Pagination Section */}
         <Box sx={{ display: 'flex', justifyContent: 'center', mt: 6 }}>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
             <IconButton sx={{ bgcolor: 'white', border: '1px solid #e2e8f0', borderRadius: '8px' }}>
               <ChevronRightIcon />
             </IconButton>

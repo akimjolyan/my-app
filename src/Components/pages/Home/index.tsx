@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
     Box,
     TextField,
@@ -45,8 +46,22 @@ const ActionCard: React.FC<{ icon: React.ReactNode; label: string; sx?: any }> =
     </Paper>
 );
 
+
 const Home: React.FC = () => {
     const [query, setQuery] = useState('');
+    const navigate = useNavigate();
+
+    const handleSearch = () => {
+        if (query.trim()) {
+            navigate(`/search?q=${encodeURIComponent(query.trim())}`);
+        }
+    };
+
+    const handleKeyDown = (e: React.KeyboardEvent) => {
+        if (e.key === 'Enter') {
+            handleSearch();
+        }
+    };
 
     return (
         <Box
@@ -56,7 +71,7 @@ const Home: React.FC = () => {
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                bgcolor: '#f5f7f6',
+                // bgcolor: '#f5f7f6',
                 p: 2,
                 dir: 'rtl'
             }}
@@ -82,12 +97,15 @@ const Home: React.FC = () => {
                         placeholder="חפש משרת, תפקיד או מספר אישי..."
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
+                        onKeyDown={handleKeyDown}
                         variant="outlined"
                         slotProps={{
                             input: {
                                 startAdornment: (
                                     <InputAdornment position="start">
-                                        <SearchIcon color="action" />
+                                        <IconButton onClick={handleSearch} size="small">
+                                            <SearchIcon color="action" />
+                                        </IconButton>
                                     </InputAdornment>
                                 ),
                                 endAdornment: (

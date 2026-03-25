@@ -7,6 +7,7 @@ import {
     Divider,
 } from '@mui/material';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import { UserProfileData } from '../../../../../types/UserProfile';
 
 const InfoRow: React.FC<{ label: string; value: string }> = ({ label, value }) => (
     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', py: 1.5 }}>
@@ -19,7 +20,7 @@ const InfoRow: React.FC<{ label: string; value: string }> = ({ label, value }) =
     </Box>
 );
 
-const BasicInfoCard: React.FC = () => {
+const BasicInfoCard: React.FC<{ data: UserProfileData }> = ({ data }) => {
     return (
         <Paper
             elevation={0}
@@ -39,25 +40,25 @@ const BasicInfoCard: React.FC = () => {
             </Stack>
 
             <Box>
-                <InfoRow label="שם מלא" value="יוסי ישראלי" />
+                <InfoRow label="שם מלא" value={data.fullName} />
                 <Divider />
                 <InfoRow label="תאריך גיוס" value="01/08/2021" />
                 <Divider />
-                <InfoRow label="תפקיד" value="לוחם" />
+                <InfoRow label="תפקיד" value={data.role} />
                 <Divider />
-                <InfoRow label="מספר אישי" value="1234567" />
+                <InfoRow label="מספר אישי" value={data.personalId} />
                 <Divider />
                 <InfoRow label="תאריך לידה" value="15/05/2002" />
                 <Divider />
-                <InfoRow label="טלפון" value="050-1234567" />
+                <InfoRow label="טלפון" value={data.phone} />
                 <Divider />
-                <InfoRow label="דואר אלקטרוני" value="yossi@army.gov.il" />
+                <InfoRow label="דואר אלקטרוני" value={data.email} />
                 <Divider />
                 <InfoRow label="תאריך שחרור" value="01/08/2024" />
                 <Divider />
-                <InfoRow label="VOIP" value="5542" />
+                <InfoRow label="VOIP" value={data.voip} />
                 <Divider />
-                <InfoRow label="דרגה" value='סמ"ר' />
+                <InfoRow label="דרגה" value={data.rank} />
                 <Divider />
                 <InfoRow label="סוג שירות" value="חובה" />
             </Box>

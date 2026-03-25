@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import CorporateFareIcon from '@mui/icons-material/CorporateFare';
 import DashboardIcon from '@mui/icons-material/Dashboard';
@@ -56,6 +56,7 @@ const treeData: HierarchyNode[] = [
 ];
 
 const CommanderSidebar = () => {
+  const { id = '1' } = useParams<{ id: string }>();
   const [activeId, setActiveId] = useState<string | null>('leaf2');
 
   const handleSelect = (id: string) => {
@@ -70,9 +71,9 @@ const CommanderSidebar = () => {
   }
 
   const navItems: NavItem[] = [
-    { text: 'לוח בקרה', icon: <DashboardIcon />, path: '/Dashboard', end: true },
-    { text: 'נוכחות', icon: <GroupIcon />, path: '/Dashboard/personnel' },
-    { text: 'תורנויות', icon: <AssignmentIcon />, path: '/Dashboard/events' },
+    { text: 'לוח בקרה', icon: <DashboardIcon />, path: `/Dashboard/${id}`, end: true },
+    { text: 'נוכחות', icon: <GroupIcon />, path: `/Dashboard/${id}/personnel` },
+    { text: 'תורנויות', icon: <AssignmentIcon />, path: `/Dashboard/${id}/events` },
   ];
 
   return (
@@ -81,7 +82,7 @@ const CommanderSidebar = () => {
       sx={{
         width: 280,
         height: 'calc(100vh - 70px)',
-        bgcolor: 'white',
+
         borderLeft: '1px solid',
         borderColor: 'divider',
         display: 'flex',
@@ -101,7 +102,6 @@ const CommanderSidebar = () => {
             width: 70,
             height: 70,
             mb: 2,
-            bgcolor: '#f8fafc',
             border: '1px solid',
             borderColor: 'divider',
             p: 1.5,

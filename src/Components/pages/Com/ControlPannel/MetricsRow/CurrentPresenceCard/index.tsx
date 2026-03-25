@@ -14,13 +14,13 @@ const CurrentPresenceCard: React.FC<CurrentPresenceCardProps> = ({ present, tota
       <CardContent sx={{ p: '24px !important', dir: 'rtl' }}>
         <Stack direction="row" justifyContent="space-between" alignItems="center">
           <Box>
-            <Typography variant="subtitle2" color="text.secondary" fontWeight="bold" mb={0.5}>
+            <Typography variant="subtitle2" fontWeight="bold" mb={0.5}>
               נוכחות כרגע
             </Typography>
             <Typography variant="h3" fontWeight="bold" color="#1e293b">
               {present} / {total}
             </Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
+            <Typography variant="body2" sx={{ mt: 0.5 }}>
               נוכחים
             </Typography>
           </Box>

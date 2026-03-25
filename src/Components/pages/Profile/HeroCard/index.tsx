@@ -14,7 +14,9 @@ import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
 import EditIcon from '@mui/icons-material/Edit';
 
-const HeroCard: React.FC = () => {
+import { UserProfileData } from '../../../../types/UserProfile.ts';
+
+const HeroCard: React.FC<{ data: UserProfileData }> = ({ data }) => {
     return (
         <Paper
             elevation={0}
@@ -32,8 +34,9 @@ const HeroCard: React.FC = () => {
             }}
         >
             <Box sx={{ display: 'flex', gap: 3 }}>
-                <Box >
+                <Box sx={{ position: 'relative' }}>
                     <Avatar
+                        src={data.avatarUrl}
                         sx={{
                             width: 100,
                             height: 100,
@@ -50,7 +53,7 @@ const HeroCard: React.FC = () => {
                             right: 5,
                             width: 18,
                             height: 18,
-                            bgcolor: '#22c55e',
+                            bgcolor: data.status === 'online' ? '#22c55e' : '#94a3b8',
                             borderRadius: '50%',
                             border: '3px solid #fff'
                         }}
@@ -59,10 +62,10 @@ const HeroCard: React.FC = () => {
                 <Box sx={{ alignSelf: "flex-end" }}>
                     <Stack direction="row" spacing={1} alignItems="center" mb={0.5}>
                         <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#1e293b' }}>
-                            יוסי ישראלי
+                            {data.fullName}
                         </Typography>
                         <Chip
-                            label="סמל ראשון"
+                            label={data.rank}
                             size="small"
                             sx={{
                                 bgcolor: '#004b49',
@@ -73,10 +76,10 @@ const HeroCard: React.FC = () => {
                         />
                     </Stack>
                     <Typography variant="body1" color="text.secondary">
-                        מספר אישי: 1234567 | תפקיד: לוחם חי"ר
+                        מספר אישי: {data.personalId} | תפקיד: {data.role}
                     </Typography>
                     <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-                        יחידה: 900 | פלוגה א'
+                        יחידה: {data.unit} | {data.subUnit}
                     </Typography>
                 </Box>
             </Box>
@@ -86,10 +89,10 @@ const HeroCard: React.FC = () => {
                     עדכון פרטים
                 </Button>
                 <Button sx={{ px: "0.6em", pr: "0.3em", gap: 2, borderRadius: "1em" }} variant="outlined" startIcon={<PhoneInTalkIcon />} color="inherit">
-                    VOIP
+                    {data.voip}
                 </Button>
                 <Button sx={{ px: "0.6em", pr: "0.3em", gap: 2, borderRadius: "1em" }} variant="outlined" startIcon={<PhoneIphoneIcon />} color="inherit">
-                    טלפון נייד
+                    {data.phone}
                 </Button>
                 <Button
                     variant="contained"

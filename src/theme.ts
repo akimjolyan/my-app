@@ -1,19 +1,20 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, PaletteMode } from '@mui/material/styles';
 
-const theme = createTheme({
+export const getTheme = (mode: PaletteMode) => createTheme({
   direction: 'rtl',
   palette: {
+    mode,
     primary: {
       main: '#004b49', // Original Dashboard Teal
       contrastText: '#ffffff',
     },
     secondary: {
-      main: '#1e293b', // Slate Navy
+      main: mode === 'light' ? '#1e293b' : '#94a3b8', // Slate Navy / Muted Slate
       contrastText: '#ffffff',
     },
     background: {
-      default: '#f8fafc',
-      paper: '#ffffff',
+      default: mode === 'light' ? '#f8fafc' : '#0f172a', // Light Slate / Deep Navy
+      paper: mode === 'light' ? '#ffffff' : '#1e293b',   // White / Slate Navy
     },
     success: {
       main: '#22c55e',
@@ -25,20 +26,20 @@ const theme = createTheme({
       main: '#ef4444',
     },
     text: {
-      primary: '#1e293b',
-      secondary: '#64748b',
+      primary: mode === 'light' ? '#1e293b' : '#f8fafc',
+      secondary: mode === 'light' ? '#64748b' : '#94a3b8',
     },
     grey: {
-      50: '#f9fafb',
-      100: '#f1f5f9',
-      200: '#e2e8f0',
-      300: '#cbd5e1',
+      50: mode === 'light' ? '#f9fafb' : '#1e293b',
+      100: mode === 'light' ? '#f1f5f9' : '#0f172a',
+      200: mode === 'light' ? '#e2e8f0' : '#334155',
+      300: mode === 'light' ? '#cbd5e1' : '#475569',
     }
   },
   typography: {
     fontFamily: '"Assistant", "Inter", "Roboto", "Helvetica", "Arial", sans-serif',
-    h5: { fontWeight: 800, color: '#1e293b' },
-    h6: { fontWeight: 700, color: '#1e293b' },
+    h5: { fontWeight: 800 },
+    h6: { fontWeight: 700 },
     subtitle1: { fontWeight: 700 },
     subtitle2: { fontWeight: 700 },
     body1: { fontSize: '1rem' },
@@ -84,7 +85,7 @@ const theme = createTheme({
       },
       styleOverrides: {
         root: {
-          border: '1px solid #f0f0f0',
+          border: mode === 'light' ? '1px solid #f0f0f0' : '1px solid #334155',
           boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
         },
       },
@@ -95,7 +96,7 @@ const theme = createTheme({
       },
       styleOverrides: {
         root: {
-          border: '1px solid #f0f0f0',
+          border: mode === 'light' ? '1px solid #f0f0f0' : '1px solid #334155',
           borderRadius: 14,
         },
       },
@@ -103,11 +104,11 @@ const theme = createTheme({
     MuiTableCell: {
       styleOverrides: {
         root: {
-          borderBottom: '1px solid #f1f5f9',
+          borderBottom: mode === 'light' ? '1px solid #f1f5f9' : '1px solid #334155',
         },
         head: {
-          backgroundColor: '#f9fafb',
-          color: '#64748b',
+          backgroundColor: mode === 'light' ? '#f9fafb' : '#1e293b',
+          color: mode === 'light' ? '#64748b' : '#94a3b8',
           fontWeight: 'bold',
         }
       }
@@ -115,4 +116,4 @@ const theme = createTheme({
   },
 });
 
-export default theme;
+export default getTheme;

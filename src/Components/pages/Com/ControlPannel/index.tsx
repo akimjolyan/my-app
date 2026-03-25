@@ -6,7 +6,7 @@ import MetricsRow from './MetricsRow/index.tsx';
 
 const ControlPannel: React.FC = () => {
   return (
-    <Box sx={{ p: 4, bgcolor: '#f8fafc', minHeight: '100vh' }} dir="rtl">
+    <Box sx={{ p: 4, minHeight: '100vh' }} dir="rtl">
       <Box mb={4}>
         <MetricsRow />
       </Box>

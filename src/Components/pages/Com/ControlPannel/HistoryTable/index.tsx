@@ -27,7 +27,7 @@ const HistoryTable: React.FC = () => {
     <Card sx={{ borderRadius: 4, border: '1px solid #f0f0f0', boxShadow: '0 4px 12px rgba(0,0,0,0.03)', bgcolor: 'white' }}>
       <CardContent sx={{ p: '24px !important', dir: 'rtl' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 4 }}>
-          <Avatar sx={{ bgcolor: '#f8fafc', color: '#64748b', border: '1px solid #f1f5f9' }}>
+          <Avatar sx={{ color: '#64748b', border: '1px solid #f1f5f9' }}>
             <HistoryIcon />
           </Avatar>
           <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#1e293b' }}>
@@ -37,7 +37,7 @@ const HistoryTable: React.FC = () => {
 
         <TableContainer sx={{ border: '1px solid #f8fafc', borderRadius: 2 }}>
           <Table>
-            <TableHead sx={{ bgcolor: '#fafafa' }}>
+            <TableHead >
               <TableRow>
                 <TableCell align="right" sx={{ fontWeight: 'bold', color: '#64748b' }}>שם התהליך</TableCell>
                 <TableCell align="right" sx={{ fontWeight: 'bold', color: '#64748b' }}>תאריך סיום</TableCell>

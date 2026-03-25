@@ -96,7 +96,8 @@ const Sidebar: React.FC = () => {
             style={{
                 width: '280px',
                 height: 'calc(100vh - 70px)',
-                backgroundColor: 'white',
+
+
                 borderLeft: '1px solid #f1f5f9',
                 display: 'flex',
                 flexDirection: 'column',
@@ -108,10 +109,10 @@ const Sidebar: React.FC = () => {
             dir="rtl"
         >
             <div style={{ marginBottom: '2.5rem', padding: '0 0.5rem' }}>
-                <Typography variant="subtitle2" sx={{ fontSize: "1.5em", fontWeight: 'bold', color: '#1e293b' }}>
+                <Typography variant="subtitle2" sx={{ fontSize: "1.5em", fontWeight: 'bold' }}>
                     היררכיה ארגונית
                 </Typography>
-                <Typography variant="caption" sx={{ fontSize: "1em", color: "#004b4990" }}>
+                <Typography variant="caption" sx={{ fontSize: "1em" }}>
                     סינון לפי מבנה היחידה
                 </Typography>
             </div>

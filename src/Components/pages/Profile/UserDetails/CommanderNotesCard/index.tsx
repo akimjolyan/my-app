@@ -8,7 +8,9 @@ import {
 import StickyNote2OutlinedIcon from '@mui/icons-material/StickyNote2Outlined';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-const CommanderNotesCard: React.FC = () => {
+import { UserProfileData } from '../../../../../types/UserProfile.ts';
+
+const CommanderNotesCard: React.FC<{ data: UserProfileData }> = ({ data }) => {
     return (
         <Paper
             sx={{

@@ -34,7 +34,7 @@ const ProcessManagement: React.FC = () => {
           </Box>
           <Box>
             <Typography sx={{ margin: '0 0 4px', fontSize: '18px', fontWeight: 700, color: '#1e293b' }}>
-              ניהול תהליכים 
+              ניהול תהליכים
             </Typography>
             <Typography sx={{ margin: 0, fontSize: '13px', color: '#64748b' }}>
               עקוב אחר התקדמות תהליכי כוח אדם ביחידה
@@ -45,7 +45,7 @@ const ProcessManagement: React.FC = () => {
           <Typography component="span" sx={{ fontSize: '11px', color: '#94a3b8' }}>
             בחר תהליך לביצוע
           </Typography>
-          <Box 
+          <Box
             component="select"
             sx={{
               padding: '8px 32px 8px 16px',
@@ -112,7 +112,7 @@ const ProcessManagement: React.FC = () => {
           <Typography sx={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', color: '#475569', margin: '0 0 8px', fontWeight: 600 }}>
             <CheckCircleIcon sx={{ fontSize: 18 }} /> משימות מפקד לשלב זה
           </Typography>
-          
+
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', borderRadius: '20px', fontSize: '14px', bgcolor: '#f8fafc', border: '1px solid #f1f5f9', color: '#1e293b' }}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
               <CheckCircleIcon sx={{ color: '#0f4c3a', mr: -0.5, ml: 1, fontSize: 20 }} />

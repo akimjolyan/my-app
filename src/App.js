@@ -10,62 +10,79 @@ import ControlPannel from './Components/pages/Com/ControlPannel/index.tsx';
 import Personnel from './Components/pages/Com/Personnel/index.tsx';
 import Events from './Components/pages/Com/Events/index.tsx';
 import { ThemeProvider, CssBaseline, Box } from '@mui/material';
-import theme from './theme.ts';
+import { ThemeModeProvider, useThemeMode } from './contexts/ThemeModeContext.tsx';
+import getTheme from './theme.ts';
+import { UserProvider } from './contexts/UserContext.tsx';
+import NotFound from './Components/pages/NotFound/index.tsx';
 
-const App = () => {
+const AppContent = () => {
+  const { mode } = useThemeMode();
+  const theme = getTheme(mode);
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
-        <Box className={styles.appShell} dir="rtl">
+      <UserProvider>
+        <Router>
+          <Box className={styles.appShell} dir="rtl">
+            {/* ── Top Navbar ── */}
+            <Navbar />
 
-          {/* ── Top Navbar ── */}
-          <Navbar />
+            {/* ── Body: Layout Routing ── */}
+            <Routes>
+              {/* Routes WITH Sidebar */}
+              <Route element={
+                <Box className={styles.mainLayoutContainer}>
+                  <main className={styles.contentArea}>
+                    <Outlet />
+                  </main>
+                  <Sidebar />
+                </Box>
+              }>
+                <Route path="/" element={<Home />} />
+                <Route path="/search" element={<Search />} />
+              </Route>
 
-          {/* ── Body: Layout Routing ── */}
-          <Routes>
-            {/* Routes WITH Sidebar */}
-            <Route element={
-              <Box className={styles.mainLayoutContainer}>
-                <main className={styles.contentArea}>
-                  <Outlet />
-                </main>
-                <Sidebar />
-              </Box>
-            }>
-              <Route path="/" element={<Home />} />
-              <Route path="/search" element={<Search />} />
-            </Route>
+              {/* Routes WITHOUT Sidebar */}
+              <Route element={
+                <Box className={styles.mainLayoutContainer}>
+                  <main className={styles.contentArea}>
+                    <Outlet />
+                  </main>
+                </Box>
+              }>
+                <Route path="/profile/:name" element={<Profile />} />
+              </Route>
 
-            {/* Routes WITHOUT Sidebar */}
-            <Route element={
-              <Box className={styles.mainLayoutContainer}>
-                <main className={styles.contentArea}>
-                  <Outlet />
-                </main>
-              </Box>
-            }>
-              <Route path="/profile" element={<Profile />} />
-            </Route>
+              {/* Routes WITH ComSidebar */}
+              <Route element={
+                <Box className={styles.mainLayoutContainer}>
+                  <main className={styles.contentArea}>
+                    <Outlet />
+                  </main>
+                  <CommanderSidebar />
+                </Box>
+              }>
+                <Route path="/Dashboard/:id" element={<ControlPannel />} />
+                <Route path="/Dashboard/:id/personnel" element={<Personnel />} />
+                <Route path="/Dashboard/:id/events" element={<Events />} />
+              </Route>
 
-            {/* Routes WITH ComSidebar */}
-            <Route element={
-              <Box className={styles.mainLayoutContainer}>
-                <main className={styles.contentArea}>
-                  <Outlet />
-                </main>
-                <CommanderSidebar />
-              </Box>
-            }>
-              <Route path="/Dashboard" element={<ControlPannel />} />
-              <Route path="/Dashboard/personnel" element={<Personnel />} />
-              <Route path="/Dashboard/events" element={<Events />} />
-            </Route>
-          </Routes>
-
-        </Box >
-      </Router >
+              {/* Catch-all Route for non-existent pages */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Box>
+        </Router>
+      </UserProvider>
     </ThemeProvider>
+  );
+};
+
+const App = () => {
+  return (
+    <ThemeModeProvider>
+      <AppContent />
+    </ThemeModeProvider>
   );
 };
 

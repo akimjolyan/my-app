@@ -10,7 +10,10 @@ import {
 } from '@mui/material';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 
+import { useNavigate } from 'react-router-dom';
+
 interface ProfileCardProps {
+    id: string;
     name: string;
     role: string;
     departmentPath: string;
@@ -18,7 +21,9 @@ interface ProfileCardProps {
     isOnline?: boolean;
 }
 
-const ProfileCard: React.FC<ProfileCardProps> = ({ name, role, departmentPath, avatarUrl, isOnline = true }) => {
+const ProfileCard: React.FC<ProfileCardProps> = ({ id, name, role, departmentPath, avatarUrl, isOnline = true }) => {
+    const navigate = useNavigate();
+
     return (
         <Card
             sx={{
@@ -91,6 +96,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ name, role, departmentPath, a
                     <Button
                         fullWidth
                         variant="contained"
+                        onClick={() => navigate(`/profile/${id}`)}
                         startIcon={<VisibilityOutlinedIcon sx={{ ml: 1, mr: 0, fontSize: 16 }} />}
                         sx={{
                             borderRadius: '10px',

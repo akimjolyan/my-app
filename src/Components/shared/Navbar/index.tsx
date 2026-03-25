@@ -1,23 +1,23 @@
-import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
-import {
-    Typography,
-    Avatar,
-    IconButton,
-    Badge,
-} from '@mui/material';
+import { Box, Typography, Avatar, IconButton, Badge } from '@mui/material';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import { useUser } from '../../../contexts/UserContext.tsx';
+import { useThemeMode } from '../../../contexts/ThemeModeContext.tsx';
+import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
     const navigate = useNavigate();
+    const { user } = useUser();
+    const { toggleTheme } = useThemeMode();
 
     return (
-        <div
-            style={{
+        <Box
+            sx={{
                 height: '70px',
                 width: '100%',
-                backgroundColor: 'white',
-                borderBottom: '1px solid #f1f5f9',
+                bgcolor: 'background.paper',
+                borderBottom: '1px solid',
+                borderColor: 'divider',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
@@ -29,19 +29,24 @@ const Navbar: React.FC = () => {
             dir="rtl"
         >
             {/* Right Group: Logo & Nav */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '3rem' }}>
-                <div
-                    onClick={() => navigate('/')}
-                    style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: '3rem' }}>
+                <Box
+                    onClick={toggleTheme}
+                    sx={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}
                 >
-                    <img
+                    <Box
+                        component="img"
                         src="/logo-small.png"
                         alt="Mizemi"
-                        style={{ height: '40px', objectFit: 'contain', mixBlendMode: 'multiply' }}
+                        sx={{
+                            height: '40px',
+                            objectFit: 'contain',
+                            filter: (theme) => theme.palette.mode === 'dark' ? 'brightness(0) invert(1)' : 'none'
+                        }}
                     />
-                </div>
+                </Box>
 
-                <nav style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+                <Box component="nav" sx={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
                     <NavLink
                         to="/"
                         style={({ isActive }) => ({
@@ -54,7 +59,7 @@ const Navbar: React.FC = () => {
                         דף הבית
                     </NavLink>
                     <NavLink
-                        to="/dashboard"
+                        to="/Dashboard/1"
                         style={({ isActive }) => ({
                             textDecoration: 'none',
                             color: isActive ? '#004b49' : '#64748b',
@@ -64,48 +69,50 @@ const Navbar: React.FC = () => {
                     >
                         לוח בקרה
                     </NavLink>
-                </nav>
-            </div>
+                </Box>
+            </Box>
 
             {/* Left Group: User Profile & Alerts */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                <IconButton size="small" sx={{ color: '#64748b' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                <IconButton size="small" sx={{ color: 'text.secondary' }}>
                     <Badge variant="dot" color="error">
                         <NotificationsNoneIcon sx={{ fontSize: 22 }} />
                     </Badge>
                 </IconButton>
 
-                <div style={{ height: '24px', width: '1px', backgroundColor: '#f1f5f9' }}></div>
+                <Box sx={{ height: '24px', width: '1px', bgcolor: 'divider' }}></Box>
 
-                <div
-                    onClick={() => navigate('/profile')}
-                    style={{
+                <Box
+                    onClick={() => navigate('/profile/me')}
+                    sx={{
                         display: 'flex',
                         alignItems: 'center',
                         gap: '1rem',
                         cursor: 'pointer'
                     }}
                 >
-                    <div style={{ textAlign: 'right' }}>
-                        <Typography variant="body2" sx={{ fontWeight: 'bold', color: '#1e293b', lineHeight: 1.2 }}>
-                            רס"ן דנה כהן
+                    <Box sx={{ textAlign: 'right' }}>
+                        <Typography variant="body2" sx={{ fontWeight: 'bold', color: 'text.primary', lineHeight: 1.2 }}>
+                            {user?.fullName}
                         </Typography>
-                        <Typography variant="caption" sx={{ color: '#64748b' }}>
-                            מנהלת מערכת
+                        <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+                            {user?.job}
                         </Typography>
-                    </div>
+                    </Box>
                     <Avatar
+                        alt={user?.fullName}
                         sx={{
                             width: 38,
                             height: 38,
-                            bgcolor: '#f1f5f9',
-                            color: '#94a3b8',
-                            border: '1px solid #f0f0f0'
+                            bgcolor: 'grey.100',
+                            color: 'grey.300',
+                            border: '1px solid',
+                            borderColor: 'divider'
                         }}
                     />
-                </div>
-            </div>
-        </div>
+                </Box>
+            </Box>
+        </Box>
     );
 };
 

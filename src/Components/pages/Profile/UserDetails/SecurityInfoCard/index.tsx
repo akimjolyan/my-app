@@ -13,7 +13,9 @@ import React from 'react';
 import SecurityItem from './Card/Card.tsx';
 
 
-const SecurityInfoCard: React.FC = () => {
+import { UserProfileData } from '../../../../../types/UserProfile.ts';
+
+const SecurityInfoCard: React.FC<{ data: UserProfileData }> = ({ data }) => {
     return (
         <Paper
             elevation={0}
@@ -34,7 +36,6 @@ const SecurityInfoCard: React.FC = () => {
             <Box>
                 <SecurityItem icon={<LockOutlinedIcon fontSize="small" />} label="סיווג ביטחוני" value="סודי" />
                 <SecurityItem
-
                     icon={<ShowChartIcon fontSize="small" />}
                     label='אירועי ב"מ'
                     value="0 אירועים חריגים"
@@ -49,7 +50,7 @@ const SecurityInfoCard: React.FC = () => {
                 <SecurityItem
                     icon={<EventAvailableIcon fontSize="small" />}
                     label="סטטוס נוכחות היום"
-                    value="נוכח ביחידה"
+                    value={data.status === 'online' ? 'נוכח ביחידה' : 'אינו נוכח'}
                 />
             </Box>
         </Paper>

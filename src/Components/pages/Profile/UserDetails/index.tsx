@@ -4,16 +4,18 @@ import BasicInfoCard from './BasicInfoCard/index.tsx';
 import SecurityInfoCard from './SecurityInfoCard/index.tsx';
 import CommanderNotesCard from './CommanderNotesCard/index.tsx';
 
-const UserDetails: React.FC = () => {
+import { UserProfileData } from '../../../../types/UserProfile.ts';
+
+const UserDetails: React.FC<{ data: UserProfileData }> = ({ data }) => {
     return (
         <Grid container spacing={4}>
             <Grid size={{ xs: 12, md: 6 }}>
-                <BasicInfoCard />
+                <BasicInfoCard data={data} />
             </Grid>
             <Grid size={{ xs: 12, md: 6 }}>
                 <Stack spacing={4}>
-                    <SecurityInfoCard />
-                    <CommanderNotesCard />
+                    <SecurityInfoCard data={data} />
+                    <CommanderNotesCard data={data} />
                 </Stack>
             </Grid>
         </Grid>
