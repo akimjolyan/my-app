@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
                         sx={{
                             height: '40px',
                             objectFit: 'contain',
-                            filter: (theme) => theme.palette.mode === 'dark' ? 'brightness(0) invert(1)' : 'none'
+                            mixBlendMode: 'multiply',
                         }}
                     />
                 </Box>

@@ -8,7 +8,7 @@ import CustomCalendar from './Calendar/index.tsx';
 
 export default function Events() {
   return (
-    <Box sx={{ p: 4, bgcolor: '#f8fafc', minHeight: '10em' }} dir="rtl">
+    <Box sx={{ p: 4, minHeight: '10em' }} dir="rtl">
       {/* Header */}
       <Box display="flex" justifyContent="space-between" alignItems="flex-start" mb={4}>
         <Box>

@@ -12,7 +12,7 @@ const TotalPersonnelCard: React.FC<TotalPersonnelCardProps> = ({ total = 13 }) =
     <Card sx={{ borderRadius: 3, boxShadow: '0 4px 12px rgba(0,0,0,0.05)', height: '100%', border: '1px solid #f0f0f0' }}>
       <CardContent sx={{ p: '24px !important', dir: 'rtl' }}>
         <Stack direction="row" justifyContent="space-between" alignItems="center" mb={3}>
-          <Avatar sx={{ color: '#64748b', width: 40, height: 40 }}>
+          <Avatar sx={{ width: 40, height: 40 }}>
             <GroupIcon fontSize="small" />
           </Avatar>
           <Chip
@@ -34,7 +34,7 @@ const TotalPersonnelCard: React.FC<TotalPersonnelCardProps> = ({ total = 13 }) =
           <Typography variant="subtitle2" color="text.secondary" fontWeight="bold">
             סה"כ כוח אדם
           </Typography>
-          <Typography variant="h3" fontWeight="bold" color="#1e293b">
+          <Typography variant="h3" fontWeight="bold" >
             {total}
           </Typography>
         </Box>

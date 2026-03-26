@@ -2,6 +2,7 @@ import CorporateFareIcon from '@mui/icons-material/CorporateFare';
 import FolderOpenIcon from '@mui/icons-material/FolderOpen';
 import GroupsIcon from '@mui/icons-material/Groups';
 import {
+    Box,
     Typography
 } from '@mui/material';
 import React, { useState } from 'react';
@@ -92,12 +93,10 @@ const Sidebar: React.FC = () => {
     };
 
     return (
-        <aside
-            style={{
+        <Box
+            sx={{
                 width: '280px',
                 height: 'calc(100vh - 70px)',
-
-
                 borderLeft: '1px solid #f1f5f9',
                 display: 'flex',
                 flexDirection: 'column',
@@ -105,26 +104,27 @@ const Sidebar: React.FC = () => {
                 overflowY: 'auto',
                 position: 'sticky',
                 top: '70px',
+                backgroundColor: "background.paper"
             }}
             dir="rtl"
         >
-            <div style={{ marginBottom: '2.5rem', padding: '0 0.5rem' }}>
+            <Box sx={{ marginBottom: '2.5rem', padding: '0 0.5rem', }}>
                 <Typography variant="subtitle2" sx={{ fontSize: "1.5em", fontWeight: 'bold' }}>
                     היררכיה ארגונית
                 </Typography>
                 <Typography variant="caption" sx={{ fontSize: "1em" }}>
                     סינון לפי מבנה היחידה
                 </Typography>
-            </div>
+            </Box>
 
-            <nav>
+            <Box>
                 <Hierarchy
                     data={treeData}
                     activeId={activeId}
                     onSelect={handleSelect}
                 />
-            </nav>
-        </aside>
+            </Box>
+        </Box>
     );
 };
 

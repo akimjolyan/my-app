@@ -130,7 +130,7 @@ const LegendItem: React.FC<{ color: string; label: string; value: number }> = ({
 
 const Personnel: React.FC = () => {
     return (
-        <Box sx={{ p: 4, bgcolor: COLORS.BG_PAGE, minHeight: '100vh', direction: 'rtl' }}>
+        <Box sx={{ p: 4, minHeight: '100vh', direction: 'rtl' }}>
             {/* Header Section */}
 
             <Box sx={{ mb: 4 }}>
@@ -237,12 +237,12 @@ const Personnel: React.FC = () => {
 
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', p: 2 }}>
                         <Stack direction="row" spacing={1} alignItems="center">
-                            <ContactPageOutlinedIcon sx={{ color: COLORS.TEXT_SUB }} />
-                            <Typography variant="subtitle1" sx={{ fontWeight: 'bold', color: COLORS.TEXT_MAIN }}>
+                            <ContactPageOutlinedIcon sx={{ color: "text.primary" }} />
+                            <Typography variant="subtitle1" sx={{ fontWeight: 'bold', color: "text.primary" }}>
                                 מעקב פרטני אחר חיילים
                             </Typography>
                         </Stack>
-                        <Link href="#" underline='none' sx={{ color: COLORS.PRIMARY, fontSize: '0.8rem', fontWeight: 'bold', py: 0.5, borderBottom: `1px solid ${COLORS.PRIMARY}` }}>
+                        <Link href="#" underline='none' sx={{ color: "background.primary", fontSize: '0.8rem', fontWeight: 'bold', py: 0.5, borderBottom: `1px solid ${COLORS.PRIMARY}` }}>
                             צפייה בכל הסד"כ
                         </Link>
                     </Box>

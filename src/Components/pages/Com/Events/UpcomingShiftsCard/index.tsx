@@ -17,29 +17,29 @@ export default function UpcomingShiftsCard() {
     <Card sx={{ borderRadius: 3, boxShadow: '0 4px 12px rgba(0,0,0,0.03)', height: '100%', border: '1px solid #f0f0f0' }}>
       <CardContent sx={{ p: '24px !important' }}>
         <Box display="flex" justifyContent="space-between" alignItems="center" mb={3}>
-           <Box display="flex" alignItems="center" gap={1.5}>
-             <Box sx={{ width: 4, height: 20, bgcolor: '#004b49', borderRadius: 4 }} />
-             <Typography variant="h6" fontWeight="bold" color="#004b49" sx={{ fontSize: '1.2rem' }}>תורנויות קרובות</Typography>
-           </Box>
-           <Button variant="text" size="small" sx={{ color: '#004b49', fontWeight: 'bold' }}>הצג הכל</Button>
+          <Box display="flex" alignItems="center" gap={1.5}>
+            <Box sx={{ width: 4, height: 20, borderRadius: 4 }} />
+            <Typography variant="h6" fontWeight="bold" sx={{ color: "text.secondary", fontSize: '1.2rem' }}>תורנויות קרובות</Typography>
+          </Box>
+          <Button variant="text" size="small" sx={{ fontWeight: 'bold' }}>הצג הכל</Button>
         </Box>
         <Box display="flex" flexDirection="column" gap={2}>
           {shifts.map(shift => (
-            <Box key={shift.id} display="flex" justifyContent="space-between" alignItems="center" bgcolor="#fcfcfc" p={2} borderRadius={3} border="1px solid #f0f0f0" sx={{ transition: '0.2s', '&:hover': { bgcolor: '#f5f7f9' } }}>
-               <Box display="flex" alignItems="center" gap={2}>
-                 <Avatar sx={{ bgcolor: shift.iconColor, color: shift.iconTextColor, border: '1px solid rgba(0,0,0,0.05)' }}>
-                   <shift.Icon fontSize="small" />
-                 </Avatar>
-                 <Box textAlign="right">
-                   <Typography variant="subtitle2" fontWeight="bold" color="#333">{shift.name}</Typography>
-                   <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.75rem' }}>{shift.role}</Typography>
-                 </Box>
-               </Box>
-               
-               <Box textAlign="left">
-                 <Typography variant="subtitle2" fontWeight="bold" color="#333" align="left">{shift.date}</Typography>
-                 <Typography variant="body2" color="text.secondary" align="left" sx={{ fontSize: '0.75rem' }}>{shift.time}</Typography>
-               </Box>
+            <Box key={shift.id} display="flex" justifyContent="space-between" alignItems="center" p={2} borderRadius={3} border="1px solid #f0f0f0" sx={{ transition: '0.2s', '&:hover': { bgcolor: 'background.default' } }}>
+              <Box display="flex" alignItems="center" gap={2}>
+                <Avatar sx={{ bgcolor: shift.iconColor, color: shift.iconTextColor, border: '1px solid rgba(0,0,0,0.05)' }}>
+                  <shift.Icon fontSize="small" />
+                </Avatar>
+                <Box textAlign="right">
+                  <Typography variant="subtitle2" fontWeight="bold" color="#333">{shift.name}</Typography>
+                  <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.75rem' }}>{shift.role}</Typography>
+                </Box>
+              </Box>
+
+              <Box textAlign="left">
+                <Typography variant="subtitle2" fontWeight="bold" color="#333" align="left">{shift.date}</Typography>
+                <Typography variant="body2" color="text.secondary" align="left" sx={{ fontSize: '0.75rem' }}>{shift.time}</Typography>
+              </Box>
             </Box>
           ))}
         </Box>

@@ -117,7 +117,6 @@ const Home: React.FC = () => {
                                 ),
                                 sx: {
                                     borderRadius: 50,
-                                    bgcolor: 'white',
                                     height: 56,
                                     px: 2,
                                     boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
@@ -125,7 +124,7 @@ const Home: React.FC = () => {
                                         borderColor: '#dde6e3'
                                     },
                                     '&:hover fieldset': {
-                                        borderColor: '#004b49 !important'
+                                        borderColor: 'background.paper !important'
                                     }
                                 }
                             }

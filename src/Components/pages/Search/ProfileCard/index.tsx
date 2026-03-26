@@ -29,7 +29,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ id, name, role, departmentPat
             sx={{
                 width: '100%',
                 borderRadius: '16px',
-                bgcolor: 'white',
+
                 border: '1px solid #f1f5f9',
                 boxShadow: '0 4px 6px -1px rgba(0,0,0,0.02)',
                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -70,9 +70,9 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ id, name, role, departmentPat
                         }}>
                             <Avatar
                                 src={avatarUrl}
-                                sx={{ 
-                                    width: 70, 
-                                    height: 70, 
+                                sx={{
+                                    width: 70,
+                                    height: 70,
                                     bgcolor: '#f8fafc',
                                 }}
                             />

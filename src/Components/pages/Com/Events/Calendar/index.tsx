@@ -77,7 +77,7 @@ const CalendarTS: React.FC = () => {
             sx={{
                 p: 3,
                 borderRadius: 5,
-                bgcolor: '#fff',
+                // bgcolor: '#fff',
                 direction: 'rtl',
                 width: '100%',
                 border: '1px solid #f0f0f0',
@@ -88,7 +88,7 @@ const CalendarTS: React.FC = () => {
             <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 4, px: 2 }}>
                 {/* Title and Nav Section */}
                 <Stack direction="row" spacing={2} alignItems="center" gap={"1em"}>
-                    <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#004b49' }}>
+                    <Typography variant="h6" sx={{ fontWeight: 'bold', color: "text.secondary" }}>
                         יומן היעדרויות - אוקטובר 2026
                     </Typography>
                     <Stack direction="row" spacing={1}>

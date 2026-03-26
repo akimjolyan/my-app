@@ -6,7 +6,6 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import FolderOpenIcon from '@mui/icons-material/FolderOpen';
 import GroupIcon from '@mui/icons-material/Group';
 import GroupsIcon from '@mui/icons-material/Groups';
-import PolicyIcon from '@mui/icons-material/Policy';
 import {
   Box,
   Typography,
@@ -15,8 +14,7 @@ import {
   ListItem,
   ListItemButton,
   ListItemIcon,
-  ListItemText,
-  Avatar
+  ListItemText
 } from '@mui/material';
 import Hierarchy from '../shared/Hierarchy/index.tsx';
 import HierarchyNode from '../../types/HierarchyNode';
@@ -38,15 +36,6 @@ const treeData: HierarchyNode[] = [
             Icon: GroupsIcon,
             teams: [
               { id: 't1', label: 'צוות איסוף' },
-              { id: 't2', label: 'צוות אנליטיקה' },
-            ],
-          },
-          {
-            id: 'leaf2',
-            label: 'מדור לוחמה אלקטרונית',
-            Icon: PolicyIcon,
-            teams: [
-              { id: 't3', label: 'צוות לוחמה אלקטרונית' },
             ],
           },
         ],
@@ -82,7 +71,7 @@ const CommanderSidebar = () => {
       sx={{
         width: 280,
         height: 'calc(100vh - 70px)',
-
+        bgcolor: "background.paper",
         borderLeft: '1px solid',
         borderColor: 'divider',
         display: 'flex',
@@ -94,21 +83,19 @@ const CommanderSidebar = () => {
       dir="rtl"
     >
       {/* Profile Section */}
-      <Box sx={{ p: 4, pt: 5, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <Avatar
+      <Box sx={{ p: 4, pt: 2, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Box
+          component="img"
           src="/logo-small.png"
           alt="MIZEMI"
           sx={{
-            width: 70,
-            height: 70,
-            mb: 2,
-            border: '1px solid',
-            borderColor: 'divider',
-            p: 1.5,
-            '& img': { objectFit: 'contain' }
+            height: { xs: 120, md: 150 },
+            objectFit: 'contain',
+            mixBlendMode: 'multiply',
+            mb: 2
           }}
         />
-        <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#1e293b', fontSize: '1.2rem' }}>
+        <Typography variant="h6" sx={{ fontWeight: 'bold', fontSize: '1.2rem' }}>
           מרכז שליטה
         </Typography>
         <Typography variant="body2" sx={{ color: '#64748b', mt: 0.5 }}>
@@ -147,12 +134,12 @@ const CommanderSidebar = () => {
         ))}
       </List>
 
-      <Divider sx={{ my: 2, mx: 3 }} />
+      <Divider sx={{ my: 1, mx: 1 }} />
 
       {/* Hierarchy Section */}
       <Box sx={{ px: 3, flex: 1, pb: 4 }}>
-        <Box sx={{ mb: 2, px: 1 }}>
-          <Typography variant="subtitle2" sx={{ fontWeight: 'bold', color: '#1e293b', fontSize: '0.9rem' }}>
+        <Box sx={{ mb: 1, px: 1 }}>
+          <Typography variant="subtitle2" sx={{ fontWeight: 'bold', fontSize: '0.9rem' }}>
             היררכיה ארגונית
           </Typography>
         </Box>

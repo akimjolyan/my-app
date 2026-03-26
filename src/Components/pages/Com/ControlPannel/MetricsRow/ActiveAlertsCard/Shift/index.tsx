@@ -9,7 +9,7 @@ interface ShiftProps {
 
 const Shift = (alert: ShiftProps) => {
     return (
-        <Stack sx={{ m: "0 !important", width: '48%', height: "100%", backgroundColor: '#f6fefa', p: 1, borderRadius: "1em", border: "1px solid #f1f5f9", gap: 2 }} direction="row" alignItems="center">
+        <Stack sx={{ m: "0 !important", width: '48%', height: "100%", p: 1, borderRadius: "1em", border: "1px solid #f1f5f9", gap: 2 }} direction="row" alignItems="center">
             <Avatar sx={{
                 bgcolor: alert.type === 'kitchen' ? '#fde68a' : '#dcfce7',
                 color: alert.type === 'kitchen' ? '#92400e' : '#166534',
@@ -19,7 +19,7 @@ const Shift = (alert: ShiftProps) => {
                 {alert.type === 'kitchen' ? <LocalDiningIcon fontSize="small" /> : <SecurityIcon fontSize="small" />}
             </Avatar>
             <Box>
-                <Typography variant="body2" sx={{ fontWeight: 'bold', color: '#1e293b', lineHeight: 1.2 }}>
+                <Typography variant="body2" sx={{ fontWeight: 'bold', lineHeight: 1.2 }}>
                     {alert.role}
                 </Typography>
                 <Typography variant="caption" color="text.secondary">

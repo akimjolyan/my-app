@@ -24,7 +24,7 @@
 /* 3. Header cells (Top row: ראשון, שני...) */
 .fc-col-header-cell {
     padding: 15px 0 !important;
-    background-color: #fbfbfb !important;
+    /* background-color: #fbfbfb !important; */
     border: none !important;
     border-bottom: 1px solid #f0f0f0 !important;
 }
@@ -32,7 +32,7 @@
 .fc-col-header-cell-cushion {
     font-size: 0.9rem !important;
     text-decoration: none !important;
-    color: #999;
+    /* color: #999; */
     font-weight: 500;
 }
 
@@ -60,7 +60,7 @@
     top: 10px !important;
     font-size: 0.9rem !important;
     font-weight: 700 !important;
-    color: #333;
+    /* color: #333; */
     padding: 0 !important;
     z-index: 10;
 }

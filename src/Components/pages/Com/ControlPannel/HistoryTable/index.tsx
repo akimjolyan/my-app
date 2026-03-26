@@ -24,13 +24,13 @@ const HistoryTable: React.FC = () => {
   ];
 
   return (
-    <Card sx={{ borderRadius: 4, border: '1px solid #f0f0f0', boxShadow: '0 4px 12px rgba(0,0,0,0.03)', bgcolor: 'white' }}>
+    <Card sx={{ borderRadius: 4, border: '1px solid #f0f0f0', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
       <CardContent sx={{ p: '24px !important', dir: 'rtl' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 4 }}>
           <Avatar sx={{ color: '#64748b', border: '1px solid #f1f5f9' }}>
             <HistoryIcon />
           </Avatar>
-          <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#1e293b' }}>
+          <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
             היסטוריית תהליכים שהושלמו
           </Typography>
         </Box>
@@ -39,22 +39,22 @@ const HistoryTable: React.FC = () => {
           <Table>
             <TableHead >
               <TableRow>
-                <TableCell align="right" sx={{ fontWeight: 'bold', color: '#64748b' }}>שם התהליך</TableCell>
-                <TableCell align="right" sx={{ fontWeight: 'bold', color: '#64748b' }}>תאריך סיום</TableCell>
-                <TableCell align="right" sx={{ fontWeight: 'bold', color: '#64748b' }}>סטטוס</TableCell>
-                <TableCell align="center" sx={{ fontWeight: 'bold', color: '#64748b' }}>פעולות</TableCell>
+                <TableCell align="right" sx={{ fontWeight: 'bold' }}>שם התהליך</TableCell>
+                <TableCell align="right" sx={{ fontWeight: 'bold' }}>תאריך סיום</TableCell>
+                <TableCell align="right" sx={{ fontWeight: 'bold' }}>סטטוס</TableCell>
+                <TableCell align="center" sx={{ fontWeight: 'bold' }}>פעולות</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {rows.map((row) => (
                 <TableRow key={row.id} hover sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                   <TableCell align="right">
-                    <Typography variant="body2" sx={{ fontWeight: 'bold', color: '#1e293b' }}>
+                    <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
                       {row.name}
                     </Typography>
                   </TableCell>
                   <TableCell align="right">
-                    <Typography variant="body2" sx={{ color: '#64748b' }}>
+                    <Typography variant="body2">
                       {row.date}
                     </Typography>
                   </TableCell>

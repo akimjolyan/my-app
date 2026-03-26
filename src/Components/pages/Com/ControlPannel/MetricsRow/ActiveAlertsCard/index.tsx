@@ -29,11 +29,11 @@ const ActiveAlertsCard: React.FC<ActiveAlertsCardProps> = ({
     <Card sx={{ borderRadius: 3, boxShadow: '0 4px 12px rgba(0,0,0,0.05)', height: '100%', border: '1px solid #f0f0f0' }}>
       <CardContent sx={{ p: '24px !important', dir: 'rtl' }}>
         <Stack direction="row" spacing={2} alignItems="center" mb={3} gap={1}>
-          <Avatar sx={{ bgcolor: '#004b49', width: 44, height: 44 }}>
+          <Avatar sx={{ bgcolor: 'text.secondary', width: 44, height: 44 }}>
             <SecurityUpdateWarningIcon sx={{ fontSize: 24, color: 'white' }} />
           </Avatar>
           <Box flex={1} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-            <Typography variant="subtitle2" fontWeight="bold" color="#1e293b">
+            <Typography variant="subtitle2" fontWeight="bold">
               תורנויות פעילות כרגע
             </Typography>
             <Typography variant="caption" color="text.secondary">

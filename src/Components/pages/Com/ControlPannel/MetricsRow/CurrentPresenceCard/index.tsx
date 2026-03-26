@@ -17,7 +17,7 @@ const CurrentPresenceCard: React.FC<CurrentPresenceCardProps> = ({ present, tota
             <Typography variant="subtitle2" fontWeight="bold" mb={0.5}>
               נוכחות כרגע
             </Typography>
-            <Typography variant="h3" fontWeight="bold" color="#1e293b">
+            <Typography variant="h3" fontWeight="bold">
               {present} / {total}
             </Typography>
             <Typography variant="body2" sx={{ mt: 0.5 }}>
@@ -59,7 +59,7 @@ const CurrentPresenceCard: React.FC<CurrentPresenceCardProps> = ({ present, tota
                 justifyContent: 'center',
               }}
             >
-              <Typography variant="body1" component="div" sx={{ fontWeight: 800, color: '#1e293b' }}>
+              <Typography variant="body1" component="div" sx={{ fontWeight: 800 }}>
                 {percentage}%
               </Typography>
             </Box>

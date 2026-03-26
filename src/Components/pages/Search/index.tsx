@@ -21,7 +21,7 @@ const Search: React.FC = () => {
   const query = searchParams.get('q') || '';
 
   return (
-    <Box sx={{ px: 4, bgcolor: '#f8fafc' }} dir="rtl">
+    <Box sx={{ px: 4 }} dir="rtl">
       <Box sx={{ maxWidth: 1400, mx: 'auto', pt: 4 }}>
 
         {/* Breadcrumbs
@@ -40,10 +40,10 @@ const Search: React.FC = () => {
 
           {/* Title Area */}
           <Box sx={{ textAlign: 'right' }}>
-            <Typography variant="h4" sx={{ fontWeight: 800, color: '#1e293b', mb: 1 }}>
+            <Typography variant="h4" sx={{ fontWeight: 800, mb: 1 }}>
               תוצאות חיפוש עבור: "{query}"
             </Typography>
-            <Typography variant="subtitle1" sx={{ color: '#94a3b8', fontWeight: 500 }}>
+            <Typography variant="subtitle1" sx={{ fontWeight: 500 }}>
               נמצאו {searchResults.length} תוצאות התואמות את החיפוש שלך
             </Typography>
           </Box>
@@ -53,19 +53,19 @@ const Search: React.FC = () => {
               variant="outlined"
               startIcon={<SortIcon sx={{ ml: 1, mr: 0, fontSize: 18 }} />}
               sx={{
-                bgcolor: 'white',
+
                 borderRadius: '10px',
                 borderColor: '#e2e8f0',
-                color: '#64748b',
+
                 textTransform: 'none',
                 fontWeight: 700,
                 fontSize: '0.85rem',
-                '&:hover': { bgcolor: '#f8fafc', borderColor: '#cbd5e1' }
+                '&:hover': { borderColor: '#cbd5e1' }
               }}
             >
               מיון לפי
             </Button>
-            <IconButton sx={{ bgcolor: 'white', border: '1px solid #e2e8f0', borderRadius: '10px', color: '#64748b' }}>
+            <IconButton sx={{ border: '1px solid #e2e8f0', borderRadius: '10px', color: '#64748b' }}>
               <GridViewIcon sx={{ fontSize: 20 }} />
             </IconButton>
           </Box>
@@ -83,7 +83,7 @@ const Search: React.FC = () => {
         {/* Pagination Section */}
         <Box sx={{ display: 'flex', justifyContent: 'center', mt: 6 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <IconButton sx={{ bgcolor: 'white', border: '1px solid #e2e8f0', borderRadius: '8px' }}>
+            <IconButton sx={{ border: '1px solid #e2e8f0', borderRadius: '8px' }}>
               <ChevronRightIcon />
             </IconButton>
             <Paper
@@ -102,7 +102,7 @@ const Search: React.FC = () => {
             >
               1
             </Paper>
-            <IconButton sx={{ bgcolor: 'white', border: '1px solid #e2e8f0', borderRadius: '8px' }}>
+            <IconButton sx={{ border: '1px solid #e2e8f0', borderRadius: '8px' }}>
               <ChevronLeftIcon />
             </IconButton>
           </Box>

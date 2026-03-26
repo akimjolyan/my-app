@@ -10,11 +10,11 @@ import { Box, Typography } from '@mui/material';
 const ProcessManagement: React.FC = () => {
   return (
     <Box sx={{
-      bgcolor: '#ffffff',
       borderRadius: '16px',
       padding: '32px',
       boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
       border: '1px solid #e2e8f0'
+      , bgcolor: "background.paper"
     }}>
       <Box sx={{
         display: 'flex',
@@ -33,16 +33,16 @@ const ProcessManagement: React.FC = () => {
             <AccountTreeIcon />
           </Box>
           <Box>
-            <Typography sx={{ margin: '0 0 4px', fontSize: '18px', fontWeight: 700, color: '#1e293b' }}>
+            <Typography sx={{ margin: '0 0 4px', fontSize: '18px', fontWeight: 700 }}>
               ניהול תהליכים
             </Typography>
-            <Typography sx={{ margin: 0, fontSize: '13px', color: '#64748b' }}>
+            <Typography sx={{ margin: 0, fontSize: '13px' }}>
               עקוב אחר התקדמות תהליכי כוח אדם ביחידה
             </Typography>
           </Box>
         </Box>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-          <Typography component="span" sx={{ fontSize: '11px', color: '#94a3b8' }}>
+          <Typography component="span" sx={{ fontSize: '11px' }}>
             בחר תהליך לביצוע
           </Typography>
           <Box
@@ -51,8 +51,6 @@ const ProcessManagement: React.FC = () => {
               padding: '8px 32px 8px 16px',
               borderRadius: '20px',
               border: '1px solid #e2e8f0',
-              bgcolor: '#f8fafc',
-              color: '#1e293b',
               fontFamily: 'inherit',
               fontWeight: 500,
               outline: 'none',
@@ -109,7 +107,7 @@ const ProcessManagement: React.FC = () => {
       <Box sx={{ display: 'flex', gap: '40px' }}>
         {/* Right List: Commander Tasks */}
         <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          <Typography sx={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', color: '#475569', margin: '0 0 8px', fontWeight: 600 }}>
+          <Typography sx={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', margin: '0 0 8px', fontWeight: 600 }}>
             <CheckCircleIcon sx={{ fontSize: 18 }} /> משימות מפקד לשלב זה
           </Typography>
 
@@ -137,7 +135,7 @@ const ProcessManagement: React.FC = () => {
 
         {/* Left List: Required Documents */}
         <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          <Typography sx={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', color: '#475569', margin: '0 0 8px', fontWeight: 600 }}>
+          <Typography sx={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', margin: '0 0 8px', fontWeight: 600 }}>
             <ListAltIcon sx={{ fontSize: 18 }} /> מסמכים נדרשים להעלאה
           </Typography>
 

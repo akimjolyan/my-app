@@ -7,7 +7,6 @@ import {
     Avatar,
     Button,
     Chip,
-    Divider,
 } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
